@@ -1,4 +1,12 @@
-OS ?= LINUX
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Linux)
+	OS = LINUX
+endif
+ifeq ($(UNAME_S),Darwin)
+	OS = MACOSX
+endif
+
+#OS ?= LINUX
 #OS ?= WINDOWS
 #OS ?= MACOSX
 #OS ?= BSD
